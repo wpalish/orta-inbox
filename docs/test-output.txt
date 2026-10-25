@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: assigned draft → independent exact-version approval → immutable manual dispatch
+ok 1 - assigned draft → independent exact-version approval → immutable manual dispatch
+  ---
+  duration_ms: 13.717625
+  type: 'test'
+  ...
+# Subtest: self approval and operator approval refuse atomically
+ok 2 - self approval and operator approval refuse atomically
+  ---
+  duration_ms: 0.914375
+  type: 'test'
+  ...
+# Subtest: unassigned author cannot create,alter,submit or mark another reply
+ok 3 - unassigned author cannot create,alter,submit or mark another reply
+  ---
+  duration_ms: 1.231834
+  type: 'test'
+  ...
+# Subtest: changed approved body clears approval,retains exact previous review and needs independent reapproval
+ok 4 - changed approved body clears approval,retains exact previous review and needs independent reapproval
+  ---
+  duration_ms: 1.357542
+  type: 'test'
+  ...
+# Subtest: cannot skip draft/review or mix new text with review;dispatch requires evidence
+ok 5 - cannot skip draft/review or mix new text with review;dispatch requires evidence
+  ---
+  duration_ms: 0.92075
+  type: 'test'
+  ...
+# Subtest: client supplied review/version/source fields never become trusted approval
+ok 6 - client supplied review/version/source fields never become trusted approval
+  ---
+  duration_ms: 0.358709
+  type: 'test'
+  ...
+# Subtest: stale global revision cannot overwrite newer body or approve unseen reply
+ok 7 - stale global revision cannot overwrite newer body or approve unseen reply
+  ---
+  duration_ms: 0.614625
+  type: 'test'
+  ...
+# Subtest: source and assignment guards include archived reply;one active reply;explicit discard retains history
+ok 8 - source and assignment guards include archived reply;one active reply;explicit discard retains history
+  ---
+  duration_ms: 0.996416
+  type: 'test'
+  ...
+# Subtest: closed/archived branch or case rejects new work and reopen;history stays readable
+ok 9 - closed/archived branch or case rejects new work and reopen;history stays readable
+  ---
+  duration_ms: 0.548625
+  type: 'test'
+  ...
+# Subtest: file restart and empty restore preserve sent/review history and source labels after branch rename
+ok 10 - file restart and empty restore preserve sent/review history and source labels after branch rename
+  ---
+  duration_ms: 11.155583
+  type: 'test'
+  ...
+# Subtest: malformed approval/dispatch backup rejected without consuming empty workspace
+ok 11 - malformed approval/dispatch backup rejected without consuming empty workspace
+  ---
+  duration_ms: 1.42925
+  type: 'test'
+  ...
+# Subtest: HTTP auth/Origin/CSRF/role/account checks and independent workflow
+ok 12 - HTTP auth/Origin/CSRF/role/account checks and independent workflow
+  ---
+  duration_ms: 157.6425
+  type: 'test'
+  ...
+# Subtest: product cookie cannot authenticate an isolated sibling application
+ok 13 - product cookie cannot authenticate an isolated sibling application
+  ---
+  duration_ms: 107.273792
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 381.167041

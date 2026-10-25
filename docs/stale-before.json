@@ -1,0 +1,47 @@
+{
+  "workspace": [
+    {
+      "id": 1,
+      "revision": 6,
+      "payload": "{\"branches\":[{\"name\":\"SYNTHETIC Астана\",\"id\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"createdAt\":\"2026-10-25T09:23:18.134Z\",\"createdBy\":\"reviewer\",\"updatedAt\":\"2026-10-25T09:23:18.134Z\",\"archived\":false}],\"cases\":[{\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\",\"status\":\"open\",\"id\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"createdAt\":\"2026-10-25T09:23:18.135Z\",\"createdBy\":\"reviewer\",\"updatedAt\":\"2026-10-25T09:23:18.135Z\",\"archived\":false}],\"replies\":[{\"case\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"body\":\"SYNTHETIC v2: время после 18:30 требует согласования с сотрудником.\",\"status\":\"review\",\"evidence\":\"\",\"author\":\"writer\",\"version\":2,\"approval\":null,\"reviews\":[],\"dispatch\":null,\"source\":{\"caseId\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"branchName\":\"SYNTHETIC Астана\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\"},\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"createdAt\":\"2026-10-25T09:23:48.961Z\",\"createdBy\":\"writer\",\"updatedAt\":\"2026-10-25T09:24:13.678Z\",\"archived\":false}]}"
+    }
+  ],
+  "audit": [
+    {
+      "id": "ec4e7bf0-d80c-42ca-b25a-6797f1bd4480",
+      "at": "2026-10-25T09:23:18.134Z",
+      "actor": "reviewer",
+      "command": "{\"collection\":\"branches\",\"id\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"operation\":\"save\",\"before\":null,\"after\":{\"name\":\"SYNTHETIC Астана\",\"id\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"createdAt\":\"2026-10-25T09:23:18.134Z\",\"createdBy\":\"reviewer\",\"updatedAt\":\"2026-10-25T09:23:18.134Z\",\"archived\":false}}"
+    },
+    {
+      "id": "eb87dfee-f52a-4eee-a2a3-0ecf078ce5ab",
+      "at": "2026-10-25T09:23:18.135Z",
+      "actor": "reviewer",
+      "command": "{\"collection\":\"cases\",\"id\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"operation\":\"save\",\"before\":null,\"after\":{\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\",\"status\":\"open\",\"id\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"createdAt\":\"2026-10-25T09:23:18.135Z\",\"createdBy\":\"reviewer\",\"updatedAt\":\"2026-10-25T09:23:18.135Z\",\"archived\":false}}"
+    },
+    {
+      "id": "0da9eb70-f4ac-426a-9785-eea28028764a",
+      "at": "2026-10-25T09:23:48.961Z",
+      "actor": "writer",
+      "command": "{\"collection\":\"replies\",\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"operation\":\"save\",\"before\":null,\"after\":{\"case\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"body\":\"SYNTHETIC: подтвердим получение после 18:00 с сотрудником филиала.\",\"status\":\"draft\",\"evidence\":\"\",\"author\":\"writer\",\"version\":1,\"approval\":null,\"reviews\":[],\"dispatch\":null,\"source\":{\"caseId\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"branchName\":\"SYNTHETIC Астана\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\"},\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"createdAt\":\"2026-10-25T09:23:48.961Z\",\"createdBy\":\"writer\",\"updatedAt\":\"2026-10-25T09:23:48.961Z\",\"archived\":false}}"
+    },
+    {
+      "id": "5e181ee9-94bc-477d-a3e8-648a4a3599b7",
+      "at": "2026-10-25T09:23:49.581Z",
+      "actor": "writer",
+      "command": "{\"collection\":\"replies\",\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"operation\":\"save\",\"before\":{\"case\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"body\":\"SYNTHETIC: подтвердим получение после 18:00 с сотрудником филиала.\",\"status\":\"draft\",\"evidence\":\"\",\"author\":\"writer\",\"version\":1,\"approval\":null,\"reviews\":[],\"dispatch\":null,\"source\":{\"caseId\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"branchName\":\"SYNTHETIC Астана\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\"},\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"createdAt\":\"2026-10-25T09:23:48.961Z\",\"createdBy\":\"writer\",\"updatedAt\":\"2026-10-25T09:23:48.961Z\",\"archived\":false},\"after\":{\"case\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"body\":\"SYNTHETIC: подтвердим получение после 18:00 с сотрудником филиала.\",\"status\":\"review\",\"evidence\":\"\",\"author\":\"writer\",\"version\":1,\"approval\":null,\"reviews\":[],\"dispatch\":null,\"source\":{\"caseId\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"branchName\":\"SYNTHETIC Астана\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\"},\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"createdAt\":\"2026-10-25T09:23:48.961Z\",\"createdBy\":\"writer\",\"updatedAt\":\"2026-10-25T09:23:49.581Z\",\"archived\":false}}"
+    },
+    {
+      "id": "528063e7-7d52-4026-ae3c-8f484764cffd",
+      "at": "2026-10-25T09:24:13.020Z",
+      "actor": "writer",
+      "command": "{\"collection\":\"replies\",\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"operation\":\"save\",\"before\":{\"case\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"body\":\"SYNTHETIC: подтвердим получение после 18:00 с сотрудником филиала.\",\"status\":\"review\",\"evidence\":\"\",\"author\":\"writer\",\"version\":1,\"approval\":null,\"reviews\":[],\"dispatch\":null,\"source\":{\"caseId\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"branchName\":\"SYNTHETIC Астана\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\"},\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"createdAt\":\"2026-10-25T09:23:48.961Z\",\"createdBy\":\"writer\",\"updatedAt\":\"2026-10-25T09:23:49.581Z\",\"archived\":false},\"after\":{\"case\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"body\":\"SYNTHETIC v2: время после 18:30 требует согласования с сотрудником.\",\"status\":\"draft\",\"evidence\":\"\",\"author\":\"writer\",\"version\":2,\"approval\":null,\"reviews\":[],\"dispatch\":null,\"source\":{\"caseId\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"branchName\":\"SYNTHETIC Астана\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\"},\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"createdAt\":\"2026-10-25T09:23:48.961Z\",\"createdBy\":\"writer\",\"updatedAt\":\"2026-10-25T09:24:13.020Z\",\"archived\":false}}"
+    },
+    {
+      "id": "3ddc5242-4a04-4f25-90df-62eaf611f133",
+      "at": "2026-10-25T09:24:13.678Z",
+      "actor": "writer",
+      "command": "{\"collection\":\"replies\",\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"operation\":\"save\",\"before\":{\"case\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"body\":\"SYNTHETIC v2: время после 18:30 требует согласования с сотрудником.\",\"status\":\"draft\",\"evidence\":\"\",\"author\":\"writer\",\"version\":2,\"approval\":null,\"reviews\":[],\"dispatch\":null,\"source\":{\"caseId\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"branchName\":\"SYNTHETIC Астана\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\"},\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"createdAt\":\"2026-10-25T09:23:48.961Z\",\"createdBy\":\"writer\",\"updatedAt\":\"2026-10-25T09:24:13.020Z\",\"archived\":false},\"after\":{\"case\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"body\":\"SYNTHETIC v2: время после 18:30 требует согласования с сотрудником.\",\"status\":\"review\",\"evidence\":\"\",\"author\":\"writer\",\"version\":2,\"approval\":null,\"reviews\":[],\"dispatch\":null,\"source\":{\"caseId\":\"83392ef4-ad56-480d-acbc-fb83068a6539\",\"code\":\"SYN-001\",\"branch\":\"496e5d12-a2a9-41a6-9a0e-7c68df2edef9\",\"branchName\":\"SYNTHETIC Астана\",\"subject\":\"Время получения\",\"question\":\"Можно согласовать получение после 18:00?\",\"assignee\":\"writer\"},\"id\":\"5e5ce899-36cf-4d86-8254-18efbf63c357\",\"createdAt\":\"2026-10-25T09:23:48.961Z\",\"createdBy\":\"writer\",\"updatedAt\":\"2026-10-25T09:24:13.678Z\",\"archived\":false}}"
+    }
+  ]
+}

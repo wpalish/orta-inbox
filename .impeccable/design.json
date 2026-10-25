@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T09:42:24.241142+00:00",
+  "title": "Design System: OrtaInbox",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "displayName": "Working Green",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15.00% 0.08204 173.03)",
+          "oklch(26.43% 0.08204 173.03)",
+          "oklch(37.86% 0.08204 173.03)",
+          "oklch(49.29% 0.08204 173.03)",
+          "oklch(60.71% 0.08204 173.03)",
+          "oklch(72.14% 0.08204 173.03)",
+          "oklch(83.57% 0.08204 173.03)",
+          "oklch(95.00% 0.08204 173.03)"
+        ]
+      },
+      "primary-hover": {
+        "displayName": "Deep Working Green",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15.00% 0.07176 173.05)",
+          "oklch(26.43% 0.07176 173.05)",
+          "oklch(37.86% 0.07176 173.05)",
+          "oklch(49.29% 0.07176 173.05)",
+          "oklch(60.71% 0.07176 173.05)",
+          "oklch(72.14% 0.07176 173.05)",
+          "oklch(83.57% 0.07176 173.05)",
+          "oklch(95.00% 0.07176 173.05)"
+        ]
+      },
+      "navy": {
+        "displayName": "Cabinet Navy",
+        "role": "secondary",
+        "tonalRamp": [
+          "oklch(15.00% 0.07333 248.44)",
+          "oklch(26.43% 0.07333 248.44)",
+          "oklch(37.86% 0.07333 248.44)",
+          "oklch(49.29% 0.07333 248.44)",
+          "oklch(60.71% 0.07333 248.44)",
+          "oklch(72.14% 0.07333 248.44)",
+          "oklch(83.57% 0.07333 248.44)",
+          "oklch(95.00% 0.07333 248.44)"
+        ]
+      },
+      "ink": {
+        "displayName": "Cabinet Ink",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.05131 249.96)",
+          "oklch(26.43% 0.05131 249.96)",
+          "oklch(37.86% 0.05131 249.96)",
+          "oklch(49.29% 0.05131 249.96)",
+          "oklch(60.71% 0.05131 249.96)",
+          "oklch(72.14% 0.05131 249.96)",
+          "oklch(83.57% 0.05131 249.96)",
+          "oklch(95.00% 0.05131 249.96)"
+        ]
+      },
+      "page": {
+        "displayName": "Cool Workspace",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.00929 242.84)",
+          "oklch(26.43% 0.00929 242.84)",
+          "oklch(37.86% 0.00929 242.84)",
+          "oklch(49.29% 0.00929 242.84)",
+          "oklch(60.71% 0.00929 242.84)",
+          "oklch(72.14% 0.00929 242.84)",
+          "oklch(83.57% 0.00929 242.84)",
+          "oklch(95.00% 0.00929 242.84)"
+        ]
+      },
+      "surface": {
+        "displayName": "White Surface",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "line": {
+        "displayName": "Divider Blue",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.02775 241.23)",
+          "oklch(26.43% 0.02775 241.23)",
+          "oklch(37.86% 0.02775 241.23)",
+          "oklch(49.29% 0.02775 241.23)",
+          "oklch(60.71% 0.02775 241.23)",
+          "oklch(72.14% 0.02775 241.23)",
+          "oklch(83.57% 0.02775 241.23)",
+          "oklch(95.00% 0.02775 241.23)"
+        ]
+      },
+      "navigation-surface": {
+        "displayName": "Navigation Mist",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.01946 240.74)",
+          "oklch(26.43% 0.01946 240.74)",
+          "oklch(37.86% 0.01946 240.74)",
+          "oklch(49.29% 0.01946 240.74)",
+          "oklch(60.71% 0.01946 240.74)",
+          "oklch(72.14% 0.01946 240.74)",
+          "oklch(83.57% 0.01946 240.74)",
+          "oklch(95.00% 0.01946 240.74)"
+        ]
+      },
+      "muted": {
+        "displayName": "Supporting Slate",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.05108 245.00)",
+          "oklch(26.43% 0.05108 245.00)",
+          "oklch(37.86% 0.05108 245.00)",
+          "oklch(49.29% 0.05108 245.00)",
+          "oklch(60.71% 0.05108 245.00)",
+          "oklch(72.14% 0.05108 245.00)",
+          "oklch(83.57% 0.05108 245.00)",
+          "oklch(95.00% 0.05108 245.00)"
+        ]
+      },
+      "input-stroke": {
+        "displayName": "Field Slate",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.04565 242.07)",
+          "oklch(26.43% 0.04565 242.07)",
+          "oklch(37.86% 0.04565 242.07)",
+          "oklch(49.29% 0.04565 242.07)",
+          "oklch(60.71% 0.04565 242.07)",
+          "oklch(72.14% 0.04565 242.07)",
+          "oklch(83.57% 0.04565 242.07)",
+          "oklch(95.00% 0.04565 242.07)"
+        ]
+      },
+      "link": {
+        "displayName": "Link Blue",
+        "role": "secondary",
+        "tonalRamp": [
+          "oklch(15.00% 0.09803 249.12)",
+          "oklch(26.43% 0.09803 249.12)",
+          "oklch(37.86% 0.09803 249.12)",
+          "oklch(49.29% 0.09803 249.12)",
+          "oklch(60.71% 0.09803 249.12)",
+          "oklch(72.14% 0.09803 249.12)",
+          "oklch(83.57% 0.09803 249.12)",
+          "oklch(95.00% 0.09803 249.12)"
+        ]
+      },
+      "pending": {
+        "displayName": "Pending Amber",
+        "role": "tertiary",
+        "tonalRamp": [
+          "oklch(15.00% 0.09818 77.06)",
+          "oklch(26.43% 0.09818 77.06)",
+          "oklch(37.86% 0.09818 77.06)",
+          "oklch(49.29% 0.09818 77.06)",
+          "oklch(60.71% 0.09818 77.06)",
+          "oklch(72.14% 0.09818 77.06)",
+          "oklch(83.57% 0.09818 77.06)",
+          "oklch(95.00% 0.09818 77.06)"
+        ]
+      },
+      "error": {
+        "displayName": "Error Red",
+        "role": "tertiary",
+        "tonalRamp": [
+          "oklch(15.00% 0.14583 27.85)",
+          "oklch(26.43% 0.14583 27.85)",
+          "oklch(37.86% 0.14583 27.85)",
+          "oklch(49.29% 0.14583 27.85)",
+          "oklch(60.71% 0.14583 27.85)",
+          "oklch(72.14% 0.14583 27.85)",
+          "oklch(83.57% 0.14583 27.85)",
+          "oklch(95.00% 0.14583 27.85)"
+        ]
+      },
+      "error-surface": {
+        "displayName": "Pale Error",
+        "role": "tertiary",
+        "tonalRamp": [
+          "oklch(15.00% 0.01650 26.65)",
+          "oklch(26.43% 0.01650 26.65)",
+          "oklch(37.86% 0.01650 26.65)",
+          "oklch(49.29% 0.01650 26.65)",
+          "oklch(60.71% 0.01650 26.65)",
+          "oklch(72.14% 0.01650 26.65)",
+          "oklch(83.57% 0.01650 26.65)",
+          "oklch(95.00% 0.01650 26.65)"
+        ]
+      },
+      "focus": {
+        "displayName": "Focus Amber",
+        "role": "tertiary",
+        "tonalRamp": [
+          "oklch(15.00% 0.13748 55.87)",
+          "oklch(26.43% 0.13748 55.87)",
+          "oklch(37.86% 0.13748 55.87)",
+          "oklch(49.29% 0.13748 55.87)",
+          "oklch(60.71% 0.13748 55.87)",
+          "oklch(72.14% 0.13748 55.87)",
+          "oklch(83.57% 0.13748 55.87)",
+          "oklch(95.00% 0.13748 55.87)"
+        ]
+      },
+      "selection-surface": {
+        "displayName": "Soft Selection Green",
+        "role": "tertiary",
+        "tonalRamp": [
+          "oklch(15.00% 0.04409 174.61)",
+          "oklch(26.43% 0.04409 174.61)",
+          "oklch(37.86% 0.04409 174.61)",
+          "oklch(49.29% 0.04409 174.61)",
+          "oklch(60.71% 0.04409 174.61)",
+          "oklch(72.14% 0.04409 174.61)",
+          "oklch(83.57% 0.04409 174.61)",
+          "oklch(95.00% 0.04409 174.61)"
+        ]
+      },
+      "selection-ink": {
+        "displayName": "Selection Ink",
+        "role": "tertiary",
+        "tonalRamp": [
+          "oklch(15.00% 0.03602 177.75)",
+          "oklch(26.43% 0.03602 177.75)",
+          "oklch(37.86% 0.03602 177.75)",
+          "oklch(49.29% 0.03602 177.75)",
+          "oklch(60.71% 0.03602 177.75)",
+          "oklch(72.14% 0.03602 177.75)",
+          "oklch(83.57% 0.03602 177.75)",
+          "oklch(95.00% 0.03602 177.75)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "primary-heading": {
+        "displayName": "Primary heading",
+        "purpose": "Fixed-size page heading; no fluid display scale."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Inherited native system typography."
+      }
+    },
+    "breakpoints": [
+      {
+        "name": "stacked-layout",
+        "value": "700px"
+      },
+      {
+        "name": "narrow-table-search",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Native inherited action styling; no animated state change.",
+      "html": "<button class=\"ds-button-primary\">Сохранить стадию и текст</button>",
+      "css": ".ds-button-primary{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-size:inherit;display:inline-block;min-height:44px;padding:.65rem 1rem;border:1px solid var(--navy,#183e60);border-radius:7px;font-weight:600;cursor:pointer;background:var(--teal,#126653);color:#fff;border-color:var(--teal,#126653);}.ds-button-primary:hover{filter:brightness(1.13);background:#0b5343;}.ds-button-primary:focus-visible{outline:3px solid #bd671a;outline-offset:3px}.ds-button-primary:disabled{cursor:not-allowed;opacity:.55}@media(max-width:700px){.ds-button-primary{max-width:100%}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Native inherited action styling; no animated state change.",
+      "html": "<button class=\"ds-button-secondary\">Вернуться</button>",
+      "css": ".ds-button-secondary{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-size:inherit;display:inline-block;min-height:44px;padding:.65rem 1rem;border:1px solid var(--navy,#183e60);border-radius:7px;font-weight:600;cursor:pointer;background:#fff;color:var(--navy,#183e60);}.ds-button-secondary:hover{filter:brightness(1.13);}.ds-button-secondary:focus-visible{outline:3px solid #bd671a;outline-offset:3px}.ds-button-secondary:disabled{cursor:not-allowed;opacity:.55}@media(max-width:700px){.ds-button-secondary{max-width:100%}}"
+    },
+    {
+      "name": "Default Button",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "Native inherited action styling; no animated state change.",
+      "html": "<button class=\"ds-button-default\">Действие</button>",
+      "css": ".ds-button-default{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-size:inherit;display:inline-block;min-height:44px;padding:.65rem 1rem;border:1px solid var(--navy,#183e60);border-radius:7px;font-weight:600;cursor:pointer;background:var(--navy,#183e60);color:#fff;}.ds-button-default:hover{filter:brightness(1.13);}.ds-button-default:focus-visible{outline:3px solid #bd671a;outline-offset:3px}.ds-button-default:disabled{cursor:not-allowed;opacity:.55}@media(max-width:700px){.ds-button-default{max-width:100%}}"
+    },
+    {
+      "name": "Labeled Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Native full-width field and connected label.",
+      "html": "<label class=\"ds-label\" for=\"ds-subject\">Тема обращения</label><input class=\"ds-field\" id=\"ds-subject\" value=\"SYNTHETIC: время получения\">",
+      "css": ".ds-label{display:block;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-weight:600;margin:0 0 .35rem;color:#172e45}.ds-field{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-size:inherit;width:100%;padding:.7rem;border:1px solid #7894aa;border-radius:7px;background:#fff;color:#172e45;caret-color:#174e7e}.ds-field:focus-visible{outline:3px solid #bd671a;outline-offset:3px}"
+    },
+    {
+      "name": "Form Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Flat bordered white container inherited from the working cabinet.",
+      "html": "<section class=\"ds-panel\"><p>Текст и стадия ответа</p></section>",
+      "css": ".ds-panel{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;color:#172e45;background:#fff;border:1px solid var(--line,#b9cbd9);border-radius:12px;padding:1.4rem;min-width:0}.ds-panel p{max-width:72ch;line-height:1.6;margin:.5rem 0 1rem}@media(max-width:700px){.ds-panel{padding:1rem}}"
+    },
+    {
+      "name": "Section Navigation",
+      "kind": "nav",
+      "refersTo": "navigation-current",
+      "description": "Text navigation with a white current-page control on a pale strip.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Разделы\"><button class=\"ds-nav-button\">Обращения</button><button class=\"ds-nav-button\" aria-current=\"page\">Ответы</button><button class=\"ds-nav-button\">Данные и доступ</button></nav>",
+      "css": ".ds-nav{display:flex;gap:.5rem;padding:.7rem max(1.25rem,calc((100% - 1160px)/2));background:#dce9f3;border-bottom:1px solid var(--line,#b9cbd9)}.ds-nav-button{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-size:inherit;display:inline-block;min-height:44px;padding:.65rem 1rem;border:1px solid var(--navy,#183e60);border-radius:7px;font-weight:600;cursor:pointer;background:transparent;border-color:transparent;color:var(--navy,#183e60)}.ds-nav-button[aria-current=\"page\"]{background:#fff;border-color:var(--line,#b9cbd9)}.ds-nav-button:hover{filter:brightness(1.13)}.ds-nav-button:focus-visible{outline:3px solid #bd671a;outline-offset:3px}@media(max-width:700px){.ds-nav{padding:.6rem;flex-wrap:wrap}.ds-nav-button{flex:1;max-width:100%}}@media(max-width:600px){.ds-nav-button{flex:auto}}"
+    },
+    {
+      "name": "Reply Evidence and History",
+      "kind": "custom",
+      "description": "Version evidence followed by a native disclosure showing retained checks.",
+      "html": "<section class=\"ds-evidence\"><h2>Версия 3 · Отправка отмечена</h2><p>Текст версии 3 одобрил reviewer</p><p class=\"ds-muted\">Это ручная отметка. Доставка и содержание внешнего сообщения не проверены.</p><details class=\"ds-history\" open><summary class=\"ds-summary\">Предыдущие проверки: 1</summary><h3>v2 · reviewer</h3><p class=\"ds-answer\">SYNTHETIC: сохранённый текст проверки.</p></details></section>",
+      "css": ".ds-evidence{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;color:#172e45;border-top:1px solid var(--line,#b9cbd9);padding-top:1rem;margin-top:1rem;display:grid;gap:.4rem;min-width:0;overflow-wrap:anywhere}.ds-evidence p{max-width:72ch;line-height:1.6;margin:.5rem 0 1rem;min-width:0;overflow-wrap:anywhere}.ds-evidence h2{font-size:1.3rem;margin:2rem 0 .75rem;min-width:0;overflow-wrap:anywhere}.ds-evidence h3{min-width:0;overflow-wrap:anywhere}.ds-muted{color:#46627a;font-size:.9rem}.ds-history{margin-top:1rem;min-width:0;overflow-wrap:anywhere}.ds-summary{cursor:pointer;min-height:44px;display:list-item;padding:.7rem 0}.ds-summary:focus-visible{outline:3px solid #bd671a;outline-offset:3px}.ds-answer{white-space:pre-wrap}"
+    },
+    {
+      "name": "Record Table",
+      "kind": "custom",
+      "description": "Native table scrolls horizontally inside its own focusable wrapper.",
+      "html": "<div class=\"ds-table-wrap\" tabindex=\"0\" aria-label=\"Таблица записей; на узком экране прокрутите вправо.\"><table class=\"ds-table\"><thead><tr><th>Обращение</th><th>Версия и проверка</th></tr></thead><tbody><tr><td>SYN-001</td><td>v3 · reviewer</td></tr></tbody></table></div>",
+      "css": ".ds-table-wrap{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;color:#172e45;overflow:auto;margin-top:1rem;border:1px solid var(--line,#b9cbd9);border-radius:12px;background:#fff}.ds-table-wrap:focus-visible{outline:3px solid #bd671a;outline-offset:3px}.ds-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}.ds-table th,.ds-table td{text-align:left;padding:.9rem;vertical-align:top;border-bottom:1px solid var(--line,#b9cbd9);overflow-wrap:anywhere;max-width:28ch}.ds-table th{background:#dce9f3;font-size:.9rem}.ds-table tr:last-child td{border-bottom:0}@media(max-width:600px){.ds-table th,.ds-table td{min-width:140px}.ds-table{font-size:.9rem}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Shared Work Cabinet",
+    "overview": "OrtaInbox extends the owner-selected QorStock and Startup Lab working cabinet. This is an ordinary Operate surface: pale blue ground, dark navy navigation, white forms, and green primary actions. The inherited shell remains the visual authority; this record does not introduce a replacement world or claim a comp-led build.\n\nIts character is direct, flat, and readable. System typography, native fields, tables, and disclosure controls make operational text the focus. Color separates navigation, actions, and supporting states; borders and spacing separate content without shadows.",
+    "keyCharacteristics": [
+      "Inherited navy navigation and pale blue workspace.",
+      "Green primary actions and white bordered form panels.",
+      "System typography with a fixed-size primary heading.",
+      "Native controls, visible focus, and readable dynamic evidence."
+    ],
+    "rules": [
+      {
+        "name": "The Inherited Shell Rule",
+        "body": "Extend the current QorStock and Startup Lab cabinet instead of replacing its palette, typography, or navigation grammar.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fixed Heading Rule",
+        "body": "Keep the primary heading at the implemented fixed 2rem size; no fluid display scale is defined.",
+        "section": "typography"
+      },
+      {
+        "name": "The Native History Rule",
+        "body": "Preserve the native details/summary marker and interaction when presenting prior checks.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do inherit the navy header, pale workspace, white form surfaces, and green primary action.",
+      "Do retain system typography and the fixed primary heading scale.",
+      "Do keep native disclosure markers and visible keyboard focus.",
+      "Do allow long identities and evidence to wrap with min-width: 0 and overflow-wrap: anywhere.",
+      "Do retain full evidence text and previous check snapshots."
+    ],
+    "donts": [
+      "Don't replace the inherited shell with a new visual identity.",
+      "Don't imply that a branch label is an access boundary.",
+      "Don't label the manual dispatch record as verified delivery.",
+      "Don't remove native history markers or clip long evidence to make a layout fit."
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "orta-inbox",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ручная очередь обращений с независимой проверкой версии ответа.",
+  "engines": {
+    "node": ">=24.15 <25"
+  },
+  "scripts": {
+    "start": "node start.js",
+    "test": "node --test --test-reporter=tap tests/*.test.js"
+  }
+}

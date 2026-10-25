@@ -1,0 +1,9 @@
+{
+  "evidenceWrap": "anywhere",
+  "identityWidth": 140,
+  "scrollWidth": 390,
+  "summaryDisplay": "list-item",
+  "width": 390,
+  "synthetic_username_length": 80,
+  "unbroken_source_token_length": 190
+}

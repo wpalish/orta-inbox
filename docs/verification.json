@@ -1,0 +1,81 @@
+{
+  "product": "orta-inbox",
+  "title": "OrtaInbox",
+  "reference": 3,
+  "version": "0.1.0",
+  "as_of": "2026-10-25T09:38:11.891627+00:00",
+  "tests": {
+    "passed": 13,
+    "failed": 0,
+    "log": "docs/test-output.txt"
+  },
+  "browser": {
+    "status": "ui_workflow_passed",
+    "synthetic_only": true,
+    "acceptance": [
+      "Actual Chrome author and IAB reviewer: draftv1→review;self approval refused;newv2 invalidated stale reviewer form without changing workspace/audit revision6/events6",
+      "Fresh v2 approval→author bodyv3 draft clears approval,preserves v2 review;premature dispatch refused;fresh v3 review/approval→manual synthetic dispatch",
+      "Final1case/1reply,replyv3 and2review snapshots;workspace revision11/audit11 exact across owned file restart and later reread",
+      "Actual mobile390CSS/DPR2 before fixes;current IAB390CSS document/scrollWidth390 after CSS fixes;80-char identity/180-char unbroken tokens fit390;native disclosure marker restored"
+    ],
+    "proof": "work/program/orta-inbox-browser-proof.json",
+    "desktop": "docs/desktop-full.png",
+    "mobile": "docs/mobile-current.png",
+    "long_content": "docs/mobile-long.png",
+    "stale_refusal_before": "work/program/orta-stale-latest-before.json",
+    "stale_refusal_after": "work/program/orta-stale-latest-after.json",
+    "external_message_sent": false
+  },
+  "acceptance": [
+    "13 domain/HTTP/file tests pass;self/operator approval,unassigned writes,skipped review,stale revision,source changes,invalid backup refuse atomically",
+    "Actual Chrome author and IAB reviewer: draftv1→review;self approval refused;newv2 invalidated stale reviewer form without changing workspace/audit revision6/events6",
+    "Fresh v2 approval→author bodyv3 draft clears approval,preserves v2 review;premature dispatch refused;fresh v3 review/approval→manual synthetic dispatch",
+    "Final1case/1reply,replyv3 and2review snapshots;workspace revision11/audit11 exact across owned file restart and later reread",
+    "Actual mobile390CSS/DPR2 before fixes;current IAB390CSS document/scrollWidth390 after CSS fixes;80-char identity/180-char unbroken tokens fit390;native disclosure marker restored"
+  ],
+  "limits": [
+    "Manual shared workspace for one organization;branch labels do not isolate staff data",
+    "No email/chat/WhatsApp import or delivery,AI,CRM,SLA or customer portal",
+    "Dispatch is a manual status with asserted text evidence,not verified external send/delivery",
+    "Unsigned backup validates structure/consistency,not authenticity;accounts/audit not included",
+    "No public server hosting/load test/external security audit/customer acceptance supplied",
+    "No password reset or session-revocation UI;owner must administer deployment",
+    "Approved reply versions preserved;not every intermediate draft is embedded in backup"
+  ],
+  "runtime": {
+    "pid": 7383,
+    "port": 8843,
+    "script": "work/program/run-orta-inbox.mjs",
+    "before": "work/program/orta-restart-before.json",
+    "after": "work/program/orta-restart-after.json"
+  },
+  "preservation": {
+    "before": "work/program/orta-prior-before.json",
+    "after": "work/program/orta-prior-after.json",
+    "previous_servers": 20,
+    "sabaqloop_owner_origin": "untouched"
+  },
+  "review": {
+    "status": "ship_at_F1_F2_scored_fix_scope",
+    "file": "docs/finish-review.json",
+    "scope": "Inherited Operate shell;not an external security audit",
+    "detector": "One invocation with unsupported --format json;regex2UI files only,no parsed page checks.No full clean-bill claim."
+  },
+  "commercial": {
+    "potential_company_matches": 10,
+    "qualified_buyers": 0,
+    "interest_confirmed": 0,
+    "new_sends": 0
+  },
+  "release_note": "OrtaInbox manual case/assigned-author/independent exact-version reply approval is original reference3 process,not a Crisp clone.13 tests including HTTP/file restore;actual browser self-approval and stale form refused,body edit revoked approval,earlier v2 review retained alongside currentv3. Manual synthetic dispatch OUT-003 is not real send/delivery. Final case1/reply1/revision11/audit11 exact across owned restart6958→7383 and reread.20 prior server DB fingerprints unchanged;old18batch93310/Derek98157/Qor3924 never restarted. Mobile390CSS current and long-token fixture proof,review fixes native disclosure/long wrapping;no whole external security audit.10 official-source company/product hypotheses,need/budget/interest unknown;no outbound,16previousSent/suppression retained. Long fixture port initially collided same-product cookies and viewport initially1280;rejected those captures,moved fixture to distinct localhost,verified actual390,reset viewport and stopped fixture7614 after ownership check.No main workspace changes.",
+  "public_evidence": [
+    "docs/browser-proof.json",
+    "docs/wrap-proof.json",
+    "docs/stale-before.json",
+    "docs/stale-after.json",
+    "docs/runtime-before.json",
+    "docs/runtime-after.json",
+    "docs/previous-servers-before.json",
+    "docs/previous-servers-after.json"
+  ]
+}

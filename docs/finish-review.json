@@ -1,0 +1,20 @@
+{
+  "verdict": {
+    "fixes": [
+      {
+        "id": "F1",
+        "score": "resolved",
+        "evidence": "Current desktop-full and mobile-current captures show the native down disclosure marker on expanded review history. mobile-long shows the native right marker on collapsed history. public/styles.css:228-233 uses display:list-item, padding, and min-height:44px, retaining the native details/summary interaction."
+      },
+      {
+        "id": "F2",
+        "score": "resolved",
+        "evidence": "mobile-long visibly wraps the 79-character identity and unbroken source/question values inside the mobile page. Current CSS:394-403 adds min-width:0 and overflow-wrap:anywhere to the identity and dynamic evidence/history containers. Supplied wrap-proof.json records width390,scrollWidth390,evidenceWrap=anywhere. Full text remains accessible; the current desktop and mobile detail remain intact."
+      }
+    ],
+    "regressions": [],
+    "scope": "This verdict scores F1 and F2 only. It is not a new whole-surface review or a claim that uncaptured states or incomplete detector checks passed."
+  },
+  "remaining": "clear",
+  "disposition": "ship"
+}
