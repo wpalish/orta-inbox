@@ -1,0 +1,47 @@
+✔ committed revocation remains confirmed after refresh failure; retry refresh never resends mutation (10.300667ms)
+✔ refused revocation retains its action and focuses the real refusal without success claim (1.827583ms)
+✔ created account is confirmed once even when its follow-up list fails (2.242292ms)
+✔ protected and logout401 clear stale identity and expose login without page reload (2.178709ms)
+✔ login401 preserves the current login form instead of recursively reopening it (1.367292ms)
+✔ CLI rejects implicit paths, duplicates and unsupported options (1.998166ms)
+✔ running WAL full snapshot preserves accounts, sessions, failures, domain data and audit across restore/restart (418.346875ms)
+✔ corrupt, wrong-product, unsupported-schema and invalid-domain inputs never publish a restore (404.450167ms)
+✔ existing outputs, sidecars and symlinks are refused without replacing or following targets (298.332167ms)
+✔ concurrent snapshot publishers never overwrite the winning new destination (136.510542ms)
+✔ unsafe writable output directories and source sidecar symlinks fail closed (193.596125ms)
+✔ first boot refuses missing owner secret without creating a database (4.647958ms)
+✔ external plaintext, credentials in origin and ambiguous production data paths fail closed (0.247542ms)
+✔ invalid runtime, bind address, port and bootstrap credentials are rejected (2.913084ms)
+✔ preflight reads an existing owner without creating or rotating accounts (44.771917ms)
+✔ preflight refuses foreign databases and symlinks without changing the file (2.889ms)
+✔ start refuses unsafe production config before touching its database (91.829125ms)
+✔ cold start, health command, graceful restart and saved sessions work on a real file (374.489958ms)
+✔ configured HTTPS proxy origin sets Secure cookies and keeps exact Host and Origin checks (147.776ms)
+✔ production requires private process-owned database files, sidecars and a real parent directory (40.727875ms)
+✔ health command has an absolute deadline even when a responder continuously trickles bytes (2059.670583ms)
+✔ admin account summary exposes only factual active-session metadata; employee access is denied (286.363875ms)
+✔ session revocation enforces admin, Origin and CSRF, preserves the requesting session and audits without tokens (240.508667ms)
+✔ unexpected errors are generic500 while intentional statuses and duplicate-name behavior survive (109.789625ms)
+✔ invalid calendar dates produce intentional validation problems instead of RangeError (0.636625ms)
+✔ health reports only product/status, requires DB and admin, and does not create sessions (44.38275ms)
+✔ assigned draft → independent exact-version approval → immutable manual dispatch (8.831792ms)
+✔ self approval and operator approval refuse atomically (2.505208ms)
+✔ unassigned author cannot create,alter,submit or mark another reply (3.949291ms)
+✔ changed approved body clears approval,retains exact previous review and needs independent reapproval (3.425916ms)
+✔ cannot skip draft/review or mix new text with review;dispatch requires evidence (2.144041ms)
+✔ client supplied review/version/source fields never become trusted approval (0.440875ms)
+✔ stale global revision cannot overwrite newer body or approve unseen reply (0.6915ms)
+✔ source and assignment guards include archived reply;one active reply;explicit discard retains history (2.779958ms)
+✔ closed/archived branch or case rejects new work and reopen;history stays readable (1.290334ms)
+✔ file restart and empty restore preserve sent/review history and source labels after branch rename (18.366333ms)
+✔ malformed approval/dispatch backup rejected without consuming empty workspace (4.656625ms)
+✔ HTTP auth/Origin/CSRF/role/account checks and independent workflow (248.870042ms)
+✔ product cookie cannot authenticate an isolated sibling application (155.200625ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2917.975834
