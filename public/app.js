@@ -8,7 +8,7 @@ const status={draft:'Черновик',review:'На проверке',approved:'
 function say(text,error=false){notice.textContent=text;notice.className=error?'error':'';if(error)notice.focus();}
 async function run(fn,b){say('');if(b){b.disabled=true;b.setAttribute('aria-busy','true');}try{await fn();}catch(e){say(e.message,true);}finally{if(b){b.disabled=false;b.removeAttribute('aria-busy');}}}
 const B=(label,fn,cls='secondary')=>{const b=E('button',label,cls);b.type='button';b.onclick=()=>run(fn,b);return b;};
-async function api(path,method='GET',data){const r=await fetch(path,{method,headers:{...(data?{'Content-Type':'application/json'}:{}),...(user?{'X-CSRF-Token':user.csrf}:{})},...(data?{body:JSON.stringify(data)}:{})});const x=await r.json();if(!r.ok)throw Error(x.error||'Не удалось выполнить запрос.');return x;}
+async function api(path,method='GET',data){const r=await fetch(path,{method,headers:{...(data?{'Content-Type':'application/json'}:{}),...(user?{'X-CSRF-Token':user.csrf}:{})},...(data?{body:JSON.stringify(data)}:{})});const x=await r.json();if(!r.ok){if(r.status===401&&path!=='/api/login'){user=null;state=null;staff=[];login();}throw Error(x.error||'Не удалось выполнить запрос.');}return x;}
 function field(form,label,key,value='',type='text',required=true){const l=E('label',label),e=E(type==='textarea'?'textarea':'input');e.id='f-'+ ++n;l.htmlFor=e.id;e.name=key;if(type!=='textarea')e.type=type;e.value=value;e.required=required;form.append(l,e);return e;}
 function select(form,label,key,value,options){const l=E('label',label),e=E('select');e.id='f-'+ ++n;l.htmlFor=e.id;e.name=key;e.required=true;e.append(new Option('Выберите значение',''));for(const o of options)e.append(new Option(o.label,o.value));e.value=value;form.append(l,e);return e;}
 function focusTitle(){const h=screen.querySelector('h1');h.tabIndex=-1;h.focus();}
@@ -46,8 +46,71 @@ function edit(c,row,defaults={}){const formRevision=state.revision;screen.replac
  }
  const actions=E('div',undefined,'actions'),submit=E('button',c.key==='replies'?'Сохранить стадию и текст':'Сохранить');submit.type='submit';submit.disabled=locked;actions.append(submit,B('Вернуться',list));if(row&&!row.archived&&user.role==='admin')actions.append(B('В архив',async()=>{state=await api('/api/command','POST',{collection:c.key,id:row.id,operation:'archive',revision:formRevision});list();say('Запись архивирована, история сохранена.');}));form.append(actions);form.onsubmit=event=>{event.preventDefault();run(async()=>{const data=Object.fromEntries(new FormData(form));for(const f of c.fields)if(row&&(f.readOnly||locked))data[f.key]=row[f.key];state=await api('/api/command','POST',{collection:c.key,id:row?.id,operation:'save',revision:formRevision,data});list();say('Запись сохранена.');},submit);};screen.append(form);if(c.key==='replies')screen.append(E('p','Порядок: сохраните текст как «Черновик» → отдельным сохранением передайте «На проверке» → другой администратор выбирает «Одобрен» → автор указывает основание и выбирает «Отправка отмечена». Любую правку сохраните как черновик.','muted'));focusTitle();}
 function download(data){const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=E('a');a.href=url;a.download='orta-inbox-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function accountSessions(report) {
+  const panel = E('section', undefined, 'panel account-sessions'),
+    header = E('div', undefined, 'account-session-heading'),
+    refreshButton = E('button', 'Обновить сеансы', 'secondary'),
+    status = E('p', 'Загрузка аккаунтов и сеансов…', 'muted account-session-status'),
+    list = E('div', undefined, 'account-session-list');
+  refreshButton.type = 'button';
+  status.setAttribute('role', 'status');
+  status.setAttribute('aria-live', 'polite');
+  header.append(E('h2', 'Аккаунты и сеансы'), refreshButton);
+  panel.append(header, E('p', 'Отзыв завершает вход в браузерах выбранного аккаунта. Для вашего аккаунта текущий сеанс всегда сохраняется. Пароли и роли здесь не меняются.', 'muted'), status, list);
+  screen.append(panel);
+  let requestNumber = 0;
+  const stamp = value => new Date(value).toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
+  async function refresh() {
+    const current = ++requestNumber;
+    status.textContent = 'Обновление сведений о сеансах…';
+    try {
+      const result = await api('/api/accounts');
+      if (current !== requestNumber || !panel.isConnected) return;
+      list.replaceChildren();
+      for (const account of result.users) {
+        const row = E('article', undefined, 'account-session-row'),
+          detail = E('div'),
+          label = account.isCurrentUser ? 'Завершить другие сеансы' : 'Завершить все сеансы',
+          revoke = E('button', label, 'secondary');
+        detail.append(E('h3', account.name + (account.isCurrentUser ? ' · ваш аккаунт' : '')), E('p', (account.role === 'admin' ? 'Администратор' : 'Сотрудник') + ' · действующих сеансов: ' + account.activeSessions));
+        const expiry = !account.activeSessions ? 'Действующих сеансов нет.' : account.earliestExpiry === account.latestExpiry ? 'Истечение: ' + stamp(account.latestExpiry) : 'Истечение сеансов: от ' + stamp(account.earliestExpiry) + ' до ' + stamp(account.latestExpiry);
+        detail.append(E('small', expiry));
+        revoke.type = 'button';
+        revoke.setAttribute('aria-label', label + ': ' + account.name);
+        revoke.disabled = account.activeSessions <= (account.isCurrentUser ? 1 : 0);
+        revoke.addEventListener('click', () => run(async () => {
+          revoke.textContent = 'Завершение…';
+          try {
+            const result = await api('/api/accounts/revoke-sessions', 'POST', {username: account.name});
+            await confirmMutation('Завершено действующих сеансов: ' + result.revoked + ' · ' + result.username + (result.keptCurrent ? '. Ваш текущий сеанс сохранён.' : '.'));
+          } finally { revoke.textContent = label; }
+        }, revoke));
+        row.append(detail, revoke);
+        list.append(row);
+      }
+      status.textContent = 'Обновлено: ' + stamp(result.serverTime) + '. Ваш текущий сеанс истекает: ' + stamp(result.currentSessionExpires) + '.';
+    } catch (error) {
+      if (current === requestNumber && panel.isConnected) status.textContent = 'Не удалось загрузить сведения. Повторите кнопкой «Обновить сеансы».';
+      throw error;
+    }
+  }
+  async function confirmMutation(confirmation) {
+    // The write is committed; a read failure must not turn it into a failed write.
+    list.replaceChildren();
+    report(confirmation);
+    try { await refresh(); }
+    catch {
+      report(confirmation + ' Список аккаунтов и сеансов не обновлён. Нажмите «Обновить сеансы» или войдите снова.', true);
+    }
+  }
+  accountSessions.refresh = refresh;
+  accountSessions.afterMutation = confirmMutation;
+  refreshButton.addEventListener('click', () => run(refresh, refreshButton));
+  run(refresh, refreshButton);
+}
+
 function settings(){chrome();screen.replaceChildren(E('h1','Данные и доступ'));screen.append(B('Вернуться',list));if(user.role!=='admin'){screen.append(E('p','Аккаунты, журнал и копии доступны администратору.'));return;}
- screen.append(E('h2','Аккаунты'),E('p','Создайте отдельные аккаунты автора и администратора проверки. Все сотрудники видят общие данные. Интерфейса отзыва сессий и сброса паролей нет.','muted'));const f=E('form',undefined,'panel');field(f,'Имя нового аккаунта','username');field(f,'Пароль нового аккаунта','password','','password').autocomplete='new-password';select(f,'Роль','role','operator',[{value:'operator',label:'Сотрудник'},{value:'admin',label:'Администратор'}]);const b=E('button','Создать аккаунт');b.type='submit';f.append(b);f.onsubmit=e=>{e.preventDefault();run(async()=>{await api('/api/users','POST',Object.fromEntries(new FormData(f)));staff=(await api('/api/users')).users;f.reset();say('Аккаунт создан.');},b);};screen.append(f,E('h2','Копии и журнал'),B('Скачать копию данных',async()=>download(await api('/api/backup'))),B('Показать журнал',async()=>{const x=await api('/api/audit');const d=E('details');d.open=true;d.append(E('summary','Последние события'),E('pre',JSON.stringify(x.events,null,2)));screen.append(d);}));const upload=field(screen,'Восстановить JSON в пустую базу','backup','','file',false);upload.accept='.json,application/json';upload.onchange=()=>run(async()=>{if(!upload.files[0])return;const copy=JSON.parse(await upload.files[0].text());const p=E('section',undefined,'panel');p.append(E('h3','Восстановление в пустую базу'),E('p','Продукт: '+copy.product+'. Записей: '+Object.values(copy.data||{}).reduce((n,a)=>n+(Array.isArray(a)?a.length:0),0)+'. Непустая база не заменяется. Аккаунты и журнал не входят в эту копию.'),B('Подтвердить восстановление',async()=>{state=await api('/api/restore','POST',copy);list();say('Копия восстановлена.');},'primary'));screen.append(p);});focusTitle();}
+ accountSessions(say);screen.append(E('h2','Аккаунты'),E('p','Создайте отдельные аккаунты автора и администратора проверки. Все сотрудники видят общие данные. Сеансы можно завершить в этом разделе. Сброс паролей пока недоступен.','muted'));const f=E('form',undefined,'panel');field(f,'Имя нового аккаунта','username');field(f,'Пароль нового аккаунта','password','','password').autocomplete='new-password';select(f,'Роль','role','operator',[{value:'operator',label:'Сотрудник'},{value:'admin',label:'Администратор'}]);const b=E('button','Создать аккаунт');b.type='submit';f.append(b);f.onsubmit=e=>{e.preventDefault();run(async()=>{const created=await api('/api/users','POST',Object.fromEntries(new FormData(f)));staff=[...staff.filter(account=>account.name!==created.username),{name:created.username,role:created.role}];f.reset();await accountSessions.afterMutation('Аккаунт создан.');},b);};screen.append(f,E('h2','Копии и журнал'),B('Скачать копию данных',async()=>download(await api('/api/backup'))),B('Показать журнал',async()=>{const x=await api('/api/audit');const d=E('details');d.open=true;d.append(E('summary','Последние события'),E('pre',JSON.stringify(x.events,null,2)));screen.append(d);}));const upload=field(screen,'Восстановить JSON в пустую базу','backup','','file',false);upload.accept='.json,application/json';upload.onchange=()=>run(async()=>{if(!upload.files[0])return;const copy=JSON.parse(await upload.files[0].text());const p=E('section',undefined,'panel');p.append(E('h3','Восстановление в пустую базу'),E('p','Продукт: '+copy.product+'. Записей: '+Object.values(copy.data||{}).reduce((n,a)=>n+(Array.isArray(a)?a.length:0),0)+'. Непустая база не заменяется. Аккаунты и журнал не входят в эту копию.'),B('Подтвердить восстановление',async()=>{state=await api('/api/restore','POST',copy);list();say('Копия восстановлена.');},'primary'));screen.append(p);});focusTitle();}
 run(async()=>{config=await api('/api/config');
 const requestedSection=new URLSearchParams(location.hash.slice(1)).get('section');if(config.collections.some(collection=>collection.key===requestedSection))active=requestedSection;
 for(const [key,label] of Object.entries({"branches": "Добавить филиал", "cases": "Создать обращение", "replies": "Подготовить ответ"})){const collection=config.collections.find(item=>item.key===key);if(collection&&!collection.addLabel)collection.addLabel=label;}user=(await api('/api/session')).user;if(user)await load();else login();});
