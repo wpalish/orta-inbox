@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-26",
+  "base_commit": "e2269360246c9a15b2cf084ad01e5cc45c30b80a",
+  "change": "workflow guide, reference-aware empty state, contextual record actions, mobile navigation and collection deep links",
+  "automated_tests": {
+    "name": "orta-inbox",
+    "exit": 0,
+    "seconds": 0.7,
+    "tests": 13,
+    "pass": 13,
+    "fail": 0
+  },
+  "automated_command": "Node v24.19.0: node --test tests/*.test.js",
+  "browser": {
+    "name": "orta-inbox",
+    "passed": true,
+    "checks": [
+      "guide starts collapsed",
+      "workflow navigation",
+      "missing reference navigation",
+      "synthetic form save",
+      "saved record reaches server",
+      "reload retains record and count",
+      "search reset restores list",
+      "column header semantics",
+      "navigation and filtering never write data",
+      "mobile populated list",
+      "no JavaScript errors"
+    ]
+  },
+  "capture_widths": [
+    390,
+    768,
+    1440
+  ],
+  "synthetic_data_only": true,
+  "scope_limits": [
+    "No live customer or market validation",
+    "No full accessibility conformance assessment",
+    "Repository domain logic unchanged; checks cover this UX increment"
+  ],
+  "files_sha256": {
+    "public/app.js": "bdc4dbd3204c6eec2191b0c42a28f280f383b19b7201e04c4fab7e643fb1f3d5",
+    "public/styles.css": "d005a8c2b61609a2ecfe0cb024ca89d772e777ceb6ef3c94f8f4231eef4096e1",
+    "public/workspace-guide.js": "adaaf6536f56d337ea17ed308af7ac04862daa2e4ee71aa2f31a8b8e1bef1778",
+    "core/server.js": "b6db46ecdddb7bf62fc5887f7f547eafd5486f8ca53370fa9378254558989bae"
+  }
+}
